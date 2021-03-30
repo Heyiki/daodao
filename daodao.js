@@ -1,4 +1,7 @@
 function getLocalTime(nS) {
+    Date.prototype.toLocaleString = function () {
+      	return this.getFullYear()+'/'+(this.getMonth()+1)+'/'+this.getDate()+' '+this.getHours()+':'+this.getMinutes()+':'+this.getSeconds()
+    }
     return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');
 }
 function getdddata(){
